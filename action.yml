@@ -1,0 +1,19 @@
+name: 'Deploy static site to AWS'
+description: 'Batteries-included Github action that deploys a static site to AWS Cloudfront, taking care of DNS, SSL certs and S3 buckets'
+author: 'Onramper'
+inputs:
+  AWS_ACCESS_KEY_ID:
+    required: true
+    description: 'The key id of your AWS Credentials'
+  AWS_SECRET_ACCESS_KEY:
+    required: true
+    description: 'The secret key of your AWS Credentials'
+  domain:
+    required: true
+    description: 'Full qualified domain (eg: subdomain.example.com) where the site will be deployed'
+  publish_dir:
+    required: true
+    description: 'Local directory to be published as a static site'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
