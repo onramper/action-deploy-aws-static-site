@@ -21,4 +21,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: ./
         with:
-          milliseconds: 1000
+          AWS_ACCESS_KEY_ID: mock_id
+          AWS_SECRET_ACCESS_KEY: mock_key
+          domain: subdomain.example.com
+          publish_dir: ./images
