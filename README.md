@@ -10,7 +10,7 @@
 </p>
 
 ## Usage
-```
+```yaml
 - name: Deploy to AWS
   uses: onramper/action-deploy-aws-static-site@v1
   with:
