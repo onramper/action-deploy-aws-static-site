@@ -39,16 +39,11 @@ export class StaticPageStack extends cdk.Stack {
     const zone = getDNSZone(this, domain);
     const certificate = getCertificate(this, fullDomain, zone);
 
-    const websiteBucket = new s3.Bucket(this, "WebsiteBucket");
-
-    const originAccessIdentity = new cloudfront.OriginAccessIdentity(
-      this,
-      "OAI",
-      {
-        comment: "Policy for Cloudfront CDN",
-      }
-    );
-    websiteBucket.grantRead(originAccessIdentity);
+	const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+		websiteIndexDocument: 'index.html',
+        websiteErrorDocument: 'error.html',
+		publicReadAccess: true,
+	});
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
       this,
@@ -56,9 +51,9 @@ export class StaticPageStack extends cdk.Stack {
       {
         originConfigs: [
           {
-            s3OriginSource: {
-              s3BucketSource: websiteBucket,
-              originAccessIdentity,
+            customOriginSource: {
+              domainName: websiteBucket.bucketWebsiteDomainName,
+              originProtocolPolicy: cloudfront.OriginProtocolPolicy.HTTP_ONLY,
             },
             behaviors: [{ isDefaultBehavior: true }],
           },
