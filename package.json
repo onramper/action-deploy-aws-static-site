@@ -28,7 +28,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.5",
+    "@actions/core": "^1.2.6",
     "@aws-cdk/aws-certificatemanager": "^1.57.0",
     "@aws-cdk/aws-cloudfront": "^1.57.0",
     "@aws-cdk/aws-route53": "^1.57.0",
