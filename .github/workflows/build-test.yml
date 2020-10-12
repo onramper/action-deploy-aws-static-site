@@ -29,4 +29,5 @@ jobs:
           git pull
           git add .
           git commit -m "Add build artifacts" > /dev/null
+          git show-ref
           git push origin v1 -f
