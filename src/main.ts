@@ -6,6 +6,17 @@ function removeLastDir(dirPath: string): string {
   return dirPath.split("/").slice(0, -1).join("/");
 }
 
+function execCDK(args: string, env: { [name: string]: string }): void {
+  execSync(
+    `(cd ${removeLastDir(__dirname)} && PATH="${removeLastDir(
+      process.execPath
+    )}:$PATH" node node_modules/aws-cdk/bin/cdk.js ${args})`,
+    {
+      env,
+    }
+  );
+}
+
 async function run(): Promise<void> {
   try {
     const AWS_ACCESS_KEY_ID: string = core.getInput("AWS_ACCESS_KEY_ID");
@@ -28,15 +39,15 @@ async function run(): Promise<void> {
       AWS_ACCESS_KEY_ID,
       AWS_SECRET_ACCESS_KEY,
     };
-
-    execSync(
-      `(cd ${removeLastDir(__dirname)} && PATH="${removeLastDir(
-        process.execPath
-      )}:$PATH" node node_modules/aws-cdk/bin/cdk.js deploy --require-approval never)`,
-      {
-        env: { ...awsCredentials, DOMAIN: domain, FOLDER: publish_dir },
-      }
-    );
+    execCDK("bootstrap", {
+      ...awsCredentials,
+      CDK_DEPLOY_REGION: "us-east-1",
+    });
+    execCDK("deploy --require-approval never", {
+      ...awsCredentials,
+      DOMAIN: domain,
+      FOLDER: publish_dir,
+    });
   } catch (error) {
     core.setFailed(error.message);
   }
