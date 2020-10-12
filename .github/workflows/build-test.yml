@@ -27,5 +27,5 @@ jobs:
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git config user.name "$GITHUB_ACTOR"
           git add .
-          git commit -m "Add build artifacts"
+          git commit -m "Add build artifacts" > /dev/null
           git push master v1
