@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  build: # make sure build/ci work properly
+  all: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,43 +12,18 @@ jobs:
           npm install
       - run: |
           npm run all
-      - name: Upload generated files
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifacts
-          path: .
-  test: # make sure the action works on a clean machine without building
-    needs: build
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download artifacts from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: artifacts
-          path: .
-      - uses: ./
+      - name: Test action
+        uses: ./
+        if: github.event_name == 'push'
         with:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           domain: action-test.onramper.dev
           publish_dir: ./images
-  publish:
-    needs: build
-    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Download artifacts from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: artifacts
-          path: .
-      - name: Commit artifacts
+      - name: Publish artifacts
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
           mv gitignore-build .gitignore
           git add .
           git commit -m "Add build artifacts"
-      - name: Publish to branch
-        run: git push master v1
+          git push master v1
