@@ -42,6 +42,8 @@ async function run(): Promise<void> {
     execCDK("bootstrap", {
       ...awsCredentials,
       CDK_DEPLOY_REGION: "us-east-1",
+      DOMAIN: domain,
+      FOLDER: publish_dir,
     });
     execCDK("deploy --require-approval never", {
       ...awsCredentials,
