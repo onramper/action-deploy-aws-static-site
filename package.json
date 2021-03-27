@@ -35,7 +35,8 @@
     "@aws-cdk/aws-route53-targets": "^1.57.0",
     "@aws-cdk/aws-s3-deployment": "^1.57.0",
     "@aws-cdk/core": "^1.57.0",
-    "aws-cdk": "^1.59.0"
+    "aws-cdk": "^1.59.0",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.57.0",
@@ -50,7 +51,7 @@
     "jest-circus": "^26.6.3",
     "js-yaml": "^4.0.0",
     "prettier": "2.2.1",
-    "ts-jest": "^24.3.0",
+    "ts-jest": "^26.5.4",
     "typescript": "^4.2.2"
   }
 }

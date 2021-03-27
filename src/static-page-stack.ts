@@ -10,6 +10,8 @@ import {
   getDomain,
 } from "./utils";
 
+import * as dotenv from 'dotenv'
+dotenv.config()
 const env = {
   // Stack must be in us-east-1, because the ACM certificate for a
   // global CloudFront distribution must be requested in us-east-1.
@@ -45,6 +47,14 @@ export class StaticPageStack extends cdk.Stack {
 		publicReadAccess: true,
 	});
 
+    const errorConfigurations: cloudfront.CfnDistribution.CustomErrorResponseProperty[] = [
+      {
+        errorCode: 404,
+        responsePagePath: "/index.html",
+        responseCode: 200,
+      },
+    ];
+
     const distribution = new cloudfront.CloudFrontWebDistribution(
       this,
       "Distribution",
@@ -58,6 +68,7 @@ export class StaticPageStack extends cdk.Stack {
             behaviors: [{ isDefaultBehavior: true }],
           },
         ],
+        errorConfigurations,
         viewerCertificate: certificate,
         comment: `CDN for static page on ${fullDomain}`,
         priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,
