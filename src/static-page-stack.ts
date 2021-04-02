@@ -39,11 +39,19 @@ export class StaticPageStack extends cdk.Stack {
     const zone = getDNSZone(this, domain);
     const certificate = getCertificate(this, fullDomain, zone);
 
-	const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-		websiteIndexDocument: 'index.html',
-        websiteErrorDocument: 'error.html',
-		publicReadAccess: true,
-	});
+    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+      websiteIndexDocument: "index.html",
+      websiteErrorDocument: "error.html",
+      publicReadAccess: true,
+      websiteRoutingRules: [
+        {
+          condition: {
+            httpErrorCodeReturnedEquals: "404",
+          },
+          replaceKey: s3.ReplaceKey.with("/index.html"),
+        },
+      ],
+    });
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
       this,
