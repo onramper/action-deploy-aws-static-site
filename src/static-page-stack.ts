@@ -39,11 +39,27 @@ export class StaticPageStack extends cdk.Stack {
     const zone = getDNSZone(this, domain);
     const certificate = getCertificate(this, fullDomain, zone);
 
-	const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
-		websiteIndexDocument: 'index.html',
-        websiteErrorDocument: 'error.html',
-		publicReadAccess: true,
-	});
+    const websiteBucket = new s3.Bucket(this, "WebsiteBucket", {
+      websiteIndexDocument: "index.html",
+      publicReadAccess: true,
+      websiteErrorDocument: "error.html",
+      /* You can do it in both ways */
+      /* 1) Redirect all error to the index.html, this is lazy solutuion. */
+      // websiteErrorDocument: 'index.html',
+      /* 
+         2) Build a custom suport to the router to deal with the 404 error
+            In this solution you can add more routing routes as many you like. 
+            This solution is more complete.
+      */
+      websiteRoutingRules: [
+        {
+          condition: {
+            httpErrorCodeReturnedEquals: "404",
+          },
+          replaceKey: s3.ReplaceKey.with("/index.html"),
+        },
+      ],
+    });
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
       this,
