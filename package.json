@@ -41,7 +41,7 @@
     "@aws-cdk/assert": "^1.57.0",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.31",
-    "@typescript-eslint/parser": "^4.14.1",
+    "@typescript-eslint/parser": "^4.28.1",
     "@zeit/ncc": "^0.22.3",
     "eslint": "^7.20.0",
     "eslint-plugin-github": "^4.1.1",
