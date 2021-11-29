@@ -15,7 +15,7 @@ inputs:
     required: true
     description: 'Local directory to be published as a static site'
 runs:
-  using: 'node12'
+  using: 'node14'
   main: 'dist/index.js'
 branding:
   icon: 'upload-cloud'
