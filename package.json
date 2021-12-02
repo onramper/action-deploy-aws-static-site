@@ -29,12 +29,12 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
-    "@aws-cdk/aws-certificatemanager": "^1.57.0",
-    "@aws-cdk/aws-cloudfront": "^1.57.0",
-    "@aws-cdk/aws-route53": "^1.57.0",
-    "@aws-cdk/aws-route53-targets": "^1.57.0",
+    "@aws-cdk/aws-certificatemanager": "^1.134.0",
+    "@aws-cdk/aws-cloudfront": "^1.134.0",
+    "@aws-cdk/aws-route53": "^1.134.0",
+    "@aws-cdk/aws-route53-targets": "^1.134.0",
     "@aws-cdk/aws-s3-deployment": "^1.134.0",
-    "@aws-cdk/core": "^1.57.0",
+    "@aws-cdk/core": "^1.134.0",
     "aws-cdk": "^2.0.0"
   },
   "devDependencies": {
