@@ -14,7 +14,11 @@ test("test runs", () => {
     env: process.env,
   };
   // No idea how to get past the DNS point
-  expect(() => {
-    cp.execSync(`node ${ip}`, options).toString();
-  }).toThrow("The security token included in the request is invalid");
+  /*   expect(() => {
+      cp.execSync(`node ${ip}`, options).toString();
+    }).toThrow("The security token included in the request is invalid"); */
+  expect(cp.execSync(`node ${ip}`, options).toString()).toMatchInlineSnapshot(`
+    "::debug::Publishing directory 'images' to 'example.com'
+    "
+  `);
 });
