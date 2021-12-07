@@ -46,6 +46,7 @@ async function run(): Promise<void> {
     const awsCredentials = {
       AWS_ACCESS_KEY_ID,
       AWS_SECRET_ACCESS_KEY,
+      CDK_DEFAULT_REGION
     };
     execCDK("bootstrap", {
       ...awsCredentials,

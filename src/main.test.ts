@@ -8,6 +8,7 @@ test("test runs", () => {
   process.env["INPUT_PUBLISH_DIR"] = "./images";
   process.env["INPUT_AWS_ACCESS_KEY_ID"] = "mock_id";
   process.env["INPUT_AWS_SECRET_ACCESS_KEY"] = "mock_secret_key";
+  process.env["INPUT_CDK_DEFAULT_REGION"] = "mock_default_region";
   process.env["GITHUB_WORKSPACE"] = ".";
   const ip = path.join(__dirname, "..", "lib", "main.js");
   const options: cp.ExecSyncOptions = {
