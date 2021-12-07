@@ -23,7 +23,7 @@ async function run(): Promise<void> {
     const AWS_SECRET_ACCESS_KEY: string = core.getInput(
       "AWS_SECRET_ACCESS_KEY"
     );
-    const CDK_DEFAULT_REGION: string = core.getInput("AWS_SECRET_ACCESS_KEY");
+    const CDK_DEFAULT_REGION: string = core.getInput("CDK_DEFAULT_REGION");
     // eslint-disable-next-line no-console
     console.error(
       "AWS_ACCESS_KEY_ID",
