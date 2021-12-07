@@ -20,7 +20,7 @@ function execCDK(args: string, env: { [name: string]: string }): void {
 async function run(): Promise<void> {
   try {
     const AWS_ACCESS_KEY_ID: string = core.getInput("AWS_ACCESS_KEY_ID");
-    console.error("AWS_ACCESS_KEY_ID", AWS_ACCESS_KEY_ID)
+    console.error("AWS_ACCESS_KEY_ID", AWS_ACCESS_KEY_ID); // eslint-disable-line no-console
     const AWS_SECRET_ACCESS_KEY: string = core.getInput(
       "AWS_SECRET_ACCESS_KEY"
     );
@@ -46,13 +46,13 @@ async function run(): Promise<void> {
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
-    console.error('bootstrap finished')
+    console.error("bootstrap finished"); // eslint-disable-line no-console
     execCDK("deploy --require-approval never", {
       ...awsCredentials,
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
-    console.error('bootstrap finished')
+    console.error("bootstrap finished"); // eslint-disable-line no-console
   } catch (error) {
     core.setFailed(error.message);
   }
