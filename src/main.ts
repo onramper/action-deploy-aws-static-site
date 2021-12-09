@@ -24,6 +24,13 @@ async function run(): Promise<void> {
       "AWS_SECRET_ACCESS_KEY"
     );
     const CDK_DEFAULT_REGION: string = core.getInput("CDK_DEFAULT_REGION");
+    // eslint-disable-next-line no-console
+    console.error(
+      "AWS_ACCESS_KEY_ID",
+      AWS_ACCESS_KEY_ID,
+      AWS_SECRET_ACCESS_KEY,
+      CDK_DEFAULT_REGION
+    );
     const domain: string = core.getInput("domain");
     if (domain.split(".").length < 2) {
       throw new Error(
@@ -47,11 +54,13 @@ async function run(): Promise<void> {
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
+    console.error("bootstrap finished"); // eslint-disable-line no-console
     execCDK("deploy --require-approval never", {
       ...awsCredentials,
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
+    console.error("bootstrap finished"); // eslint-disable-line no-console
   } catch (error) {
     core.setFailed(error.message);
   }
