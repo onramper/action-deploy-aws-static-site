@@ -23,6 +23,7 @@ async function run(): Promise<void> {
     const AWS_SECRET_ACCESS_KEY: string = core.getInput(
       "AWS_SECRET_ACCESS_KEY"
     );
+    const CDK_DEFAULT_REGION: string = core.getInput("CDK_DEFAULT_REGION");
     const domain: string = core.getInput("domain");
     if (domain.split(".").length < 2) {
       throw new Error(
@@ -38,6 +39,7 @@ async function run(): Promise<void> {
     const awsCredentials = {
       AWS_ACCESS_KEY_ID,
       AWS_SECRET_ACCESS_KEY,
+      CDK_DEFAULT_REGION,
     };
     execCDK("bootstrap", {
       ...awsCredentials,
