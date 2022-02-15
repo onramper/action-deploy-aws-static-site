@@ -12,7 +12,7 @@
 ## Usage
 ```yaml
 - name: Deploy to AWS
-  uses: onramper/action-deploy-aws-static-site@v1
+  uses: onramper/action-deploy-aws-static-site@v2
   with:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
