@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.StateType=void 0;var StateType;(function(StateType2){StateType2.PASS="Pass",StateType2.TASK="Task",StateType2.CHOICE="Choice",StateType2.WAIT="Wait",StateType2.SUCCEED="Succeed",StateType2.FAIL="Fail",StateType2.PARALLEL="Parallel",StateType2.MAP="Map"})(StateType||(exports.StateType=StateType={}));

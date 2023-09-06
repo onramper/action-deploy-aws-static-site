@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ServiceCatalogMetrics=void 0;class ServiceCatalogMetrics{static provisionedProductLaunchSum(dimensions){return{namespace:"AWS/ServiceCatalog",metricName:"ProvisionedProductLaunch",dimensionsMap:dimensions,statistic:"Sum"}}}exports.ServiceCatalogMetrics=ServiceCatalogMetrics;

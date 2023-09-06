@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ENDPOINT_SERVICE_AVAILABILITY_ZONE_PROVIDER=void 0,exports.ENDPOINT_SERVICE_AVAILABILITY_ZONE_PROVIDER="endpoint-service-availability-zones";

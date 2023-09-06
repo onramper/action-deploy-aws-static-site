@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.DATA_API_ACTIONS=void 0,exports.DATA_API_ACTIONS=["rds-data:BatchExecuteStatement","rds-data:BeginTransaction","rds-data:CommitTransaction","rds-data:ExecuteStatement","rds-data:RollbackTransaction"];

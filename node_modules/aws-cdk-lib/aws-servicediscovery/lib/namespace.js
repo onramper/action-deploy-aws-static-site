@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.NamespaceType=void 0;var NamespaceType;(function(NamespaceType2){NamespaceType2.HTTP="HTTP",NamespaceType2.DNS_PRIVATE="DNS_PRIVATE",NamespaceType2.DNS_PUBLIC="DNS_PUBLIC"})(NamespaceType||(exports.NamespaceType=NamespaceType={}));

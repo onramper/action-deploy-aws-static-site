@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.AVAILABILITY_ZONE_FALLBACK_CONTEXT_KEY=void 0,exports.AVAILABILITY_ZONE_FALLBACK_CONTEXT_KEY="aws:cdk:availability-zones:fallback";

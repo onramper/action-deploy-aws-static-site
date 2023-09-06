@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.PRIVATE_CONTEXT_DEFAULT_STACK_SYNTHESIZER=void 0;const PREFIX=`aws-cdk-private:${Math.random()}:`;exports.PRIVATE_CONTEXT_DEFAULT_STACK_SYNTHESIZER=`${PREFIX}core/defaultStackSynthesizer`;

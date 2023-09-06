@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.LoadBalancerIpAddressType=void 0;var LoadBalancerIpAddressType;(function(LoadBalancerIpAddressType2){LoadBalancerIpAddressType2.IPV4="ipv4",LoadBalancerIpAddressType2.DUAL_STACK="dualstack"})(LoadBalancerIpAddressType||(exports.LoadBalancerIpAddressType=LoadBalancerIpAddressType={}));

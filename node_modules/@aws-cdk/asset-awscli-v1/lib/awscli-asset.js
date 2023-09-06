@@ -1,0 +1,7 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LAYER_SOURCE_DIR = exports.ASSET_FILE = void 0;
+const path = require("path");
+exports.ASSET_FILE = path.join(__dirname, 'layer.zip');
+exports.LAYER_SOURCE_DIR = path.join(__dirname, '..', 'layer');
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYXdzY2xpLWFzc2V0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2F3c2NsaS1hc3NldC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7QUFBQSw2QkFBNkI7QUFFaEIsUUFBQSxVQUFVLEdBQUcsSUFBSSxDQUFDLElBQUksQ0FBQyxTQUFTLEVBQUUsV0FBVyxDQUFDLENBQUM7QUFDL0MsUUFBQSxnQkFBZ0IsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLFNBQVMsRUFBRSxJQUFJLEVBQUUsT0FBTyxDQUFDLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyBwYXRoIGZyb20gJ3BhdGgnO1xuXG5leHBvcnQgY29uc3QgQVNTRVRfRklMRSA9IHBhdGguam9pbihfX2Rpcm5hbWUsICdsYXllci56aXAnKTtcbmV4cG9ydCBjb25zdCBMQVlFUl9TT1VSQ0VfRElSID0gcGF0aC5qb2luKF9fZGlybmFtZSwgJy4uJywgJ2xheWVyJyk7XG4iXX0=
