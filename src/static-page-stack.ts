@@ -43,6 +43,12 @@ export class StaticPageStack extends cdk.Stack {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "error.html",
       publicReadAccess: true,
+      blockPublicAccess: new s3.BlockPublicAccess({
+        blockPublicAcls: false,
+        ignorePublicAcls: false,
+        blockPublicPolicy: false,
+        restrictPublicBuckets: false,
+      })
     });
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
