@@ -12,10 +12,12 @@
 ## Usage
 ```yaml
 - name: Deploy to AWS
-  uses: onramper/action-deploy-aws-static-site@v1
+  uses: onramper/action-deploy-aws-static-site@v3.2.0
   with:
     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
     AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     domain: subdomain.example.com
     publish_dir: ./public
 ```
+
+Make sure to add your `domain` to Route 53 as hosted zone and add an `NS` record if needed. An `A` record will be automatically added by the action.
