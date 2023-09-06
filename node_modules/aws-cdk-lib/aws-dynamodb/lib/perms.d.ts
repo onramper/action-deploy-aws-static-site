@@ -1,0 +1,6 @@
+export declare const READ_DATA_ACTIONS: string[];
+export declare const KEY_READ_ACTIONS: string[];
+export declare const WRITE_DATA_ACTIONS: string[];
+export declare const KEY_WRITE_ACTIONS: string[];
+export declare const READ_STREAM_DATA_ACTIONS: string[];
+export declare const DESCRIBE_TABLE = "dynamodb:DescribeTable";

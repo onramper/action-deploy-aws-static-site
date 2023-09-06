@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.ResolutionTypeHint=void 0;var ResolutionTypeHint;(function(ResolutionTypeHint2){ResolutionTypeHint2.STRING="string",ResolutionTypeHint2.NUMBER="number",ResolutionTypeHint2.STRING_LIST="string-list"})(ResolutionTypeHint||(exports.ResolutionTypeHint=ResolutionTypeHint={}));

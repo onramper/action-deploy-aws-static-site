@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.FileAssetPackaging=void 0;var FileAssetPackaging;(function(FileAssetPackaging2){FileAssetPackaging2.FILE="file",FileAssetPackaging2.ZIP_DIRECTORY="zip"})(FileAssetPackaging||(exports.FileAssetPackaging=FileAssetPackaging={}));
