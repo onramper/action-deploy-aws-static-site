@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.RemovalPolicy=void 0;var RemovalPolicy;(function(RemovalPolicy2){RemovalPolicy2.DESTROY="destroy",RemovalPolicy2.RETAIN="retain",RemovalPolicy2.SNAPSHOT="snapshot",RemovalPolicy2.RETAIN_ON_UPDATE_OR_DELETE="retain-on-update-or-delete"})(RemovalPolicy||(exports.RemovalPolicy=RemovalPolicy={}));

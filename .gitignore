@@ -1,6 +1,9 @@
-node_modules
-lib
-dist
+node_modules/*
+!node_modules/aws-cdk/
+!node_modules/@aws-cdk/
+!node_modules/constructs/
+!node_modules/aws-cdk-lib/
+lib/*.test.js
 
 # CDK
 cdk.context.json

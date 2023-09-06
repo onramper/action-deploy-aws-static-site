@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.isReusableStackSynthesizer=void 0;function isReusableStackSynthesizer(x){return!!x.reusableBind}exports.isReusableStackSynthesizer=isReusableStackSynthesizer;
