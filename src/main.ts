@@ -9,11 +9,11 @@ function removeLastDir(dirPath: string): string {
 function execCDK(args: string, env: { [name: string]: string }): void {
   execSync(
     `(cd ${removeLastDir(__dirname)} && PATH="${removeLastDir(
-      process.execPath
+      process.execPath,
     )}:$PATH" node node_modules/aws-cdk/bin/cdk.js ${args})`,
     {
       env,
-    }
+    },
   );
 }
 
@@ -21,13 +21,13 @@ async function run(): Promise<void> {
   try {
     const AWS_ACCESS_KEY_ID: string = core.getInput("AWS_ACCESS_KEY_ID");
     const AWS_SECRET_ACCESS_KEY: string = core.getInput(
-      "AWS_SECRET_ACCESS_KEY"
+      "AWS_SECRET_ACCESS_KEY",
     );
     const CDK_DEFAULT_REGION: string = core.getInput("CDK_DEFAULT_REGION");
     const domain: string = core.getInput("domain");
     if (domain.split(".").length < 2) {
       throw new Error(
-        "Invalid domain, examples of correct domains are 'example.com' or 'subdomain.example.org'"
+        "Invalid domain, examples of correct domains are 'example.com' or 'subdomain.example.org'",
       );
     }
     const raw_publish_dir: string = core.getInput("publish_dir");
@@ -52,8 +52,8 @@ async function run(): Promise<void> {
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
-  } catch (error: any) {
-    core.setFailed(error.message);
+  } catch (error) {
+    core.setFailed((error as Error).message);
   }
 }
 

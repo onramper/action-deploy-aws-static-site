@@ -29,7 +29,7 @@ export class StaticPageStack extends cdk.Stack {
       stackName: string;
       folder: string;
       fullDomain: string;
-    }
+    },
   ) {
     super(scope, id, { stackName, env });
 
@@ -48,7 +48,7 @@ export class StaticPageStack extends cdk.Stack {
         ignorePublicAcls: false,
         blockPublicPolicy: false,
         restrictPublicBuckets: false,
-      })
+      }),
     });
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
@@ -67,7 +67,7 @@ export class StaticPageStack extends cdk.Stack {
         viewerCertificate: certificate,
         comment: `CDN for static page on ${fullDomain}`,
         priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,
-      }
+      },
     );
 
     setDNSRecord(this, subdomain, zone, distribution);

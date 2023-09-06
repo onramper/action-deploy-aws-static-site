@@ -11,5 +11,5 @@ test("Empty Stack", () => {
   });
   // Prepare the stack for assertions.
   const template = Template.fromStack(stack);
-  template.hasResource("AWS::S3::Bucket", {})
+  template.hasResource("AWS::S3::Bucket", {});
 });
