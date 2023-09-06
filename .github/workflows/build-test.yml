@@ -12,14 +12,6 @@ jobs:
           npm install
       - run: |
           npm run all
-      - name: Test action
-        uses: ./
-        if: github.event_name == 'push'
-        with:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          domain: action-test.onramper.dev
-          publish_dir: ./images
       - name: Publish artifacts
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
         run: |
