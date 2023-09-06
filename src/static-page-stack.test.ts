@@ -1,5 +1,5 @@
-import { expect as expectCDK, haveResource } from "@aws-cdk/assert";
-import * as cdk from "@aws-cdk/core";
+import { Template } from "aws-cdk-lib/assertions";
+import * as cdk from "aws-cdk-lib";
 import { StaticPageStack } from "./static-page-stack";
 
 test("Empty Stack", () => {
@@ -9,5 +9,7 @@ test("Empty Stack", () => {
     folder: "./images",
     stackName: "MyTestStack",
   });
-  expectCDK(stack).to(haveResource("AWS::S3::Bucket"));
+  // Prepare the stack for assertions.
+  const template = Template.fromStack(stack);
+  template.hasResource("AWS::S3::Bucket", {});
 });

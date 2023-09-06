@@ -1,7 +1,7 @@
-import * as cdk from "@aws-cdk/core";
-import * as s3 from "@aws-cdk/aws-s3";
-import * as s3deploy from "@aws-cdk/aws-s3-deployment";
-import * as cloudfront from "@aws-cdk/aws-cloudfront";
+import * as cdk from "aws-cdk-lib/core";
+import * as s3 from "aws-cdk-lib/aws-s3";
+import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import {
   getDNSZone,
   getCertificate,
@@ -19,7 +19,7 @@ const env = {
 
 export class StaticPageStack extends cdk.Stack {
   constructor(
-    scope: cdk.Construct,
+    scope: cdk.App,
     id: string,
     {
       stackName,
@@ -29,7 +29,7 @@ export class StaticPageStack extends cdk.Stack {
       stackName: string;
       folder: string;
       fullDomain: string;
-    }
+    },
   ) {
     super(scope, id, { stackName, env });
 
@@ -43,6 +43,12 @@ export class StaticPageStack extends cdk.Stack {
       websiteIndexDocument: "index.html",
       websiteErrorDocument: "error.html",
       publicReadAccess: true,
+      blockPublicAccess: new s3.BlockPublicAccess({
+        blockPublicAcls: false,
+        ignorePublicAcls: false,
+        blockPublicPolicy: false,
+        restrictPublicBuckets: false,
+      }),
     });
 
     const distribution = new cloudfront.CloudFrontWebDistribution(
@@ -61,7 +67,7 @@ export class StaticPageStack extends cdk.Stack {
         viewerCertificate: certificate,
         comment: `CDN for static page on ${fullDomain}`,
         priceClass: cloudfront.PriceClass.PRICE_CLASS_ALL,
-      }
+      },
     );
 
     setDNSRecord(this, subdomain, zone, distribution);

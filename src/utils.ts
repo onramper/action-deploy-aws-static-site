@@ -1,8 +1,8 @@
-import * as cdk from "@aws-cdk/core";
-import * as cloudfront from "@aws-cdk/aws-cloudfront";
-import * as route53 from "@aws-cdk/aws-route53";
-import * as targets from "@aws-cdk/aws-route53-targets";
-import * as acm from "@aws-cdk/aws-certificatemanager";
+import * as cdk from "aws-cdk-lib/core";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
+import * as route53 from "aws-cdk-lib/aws-route53";
+import * as targets from "aws-cdk-lib/aws-route53-targets";
+import * as acm from "aws-cdk-lib/aws-certificatemanager";
 
 export function getSubdomain(fullDomain: string): string | null {
   const subdomainArray = fullDomain.split(".").slice(0, -2);
@@ -19,7 +19,7 @@ export function getDomain(fullDomain: string): string {
 
 export function getDNSZone(
   scope: cdk.Stack,
-  domainName: string
+  domainName: string,
 ): route53.IHostedZone {
   return route53.HostedZone.fromLookup(scope, "Route53Zone", {
     domainName,
@@ -29,7 +29,7 @@ export function getDNSZone(
 export function getCertificate(
   scope: cdk.Stack,
   fullDomainName: string,
-  zone: route53.IHostedZone
+  zone: route53.IHostedZone,
 ): cloudfront.ViewerCertificate {
   const acmCert = new acm.DnsValidatedCertificate(scope, "SiteCert", {
     domainName: fullDomainName,
@@ -44,12 +44,12 @@ export function setDNSRecord(
   scope: cdk.Stack,
   subdomain: string | null,
   zone: route53.IHostedZone,
-  distribution: cloudfront.CloudFrontWebDistribution
+  distribution: cloudfront.CloudFrontWebDistribution,
 ): route53.ARecord {
   return new route53.ARecord(scope, "Alias", {
     zone,
     target: route53.RecordTarget.fromAlias(
-      new targets.CloudFrontTarget(distribution)
+      new targets.CloudFrontTarget(distribution),
     ),
     recordName: subdomain === null ? undefined : subdomain,
   });
