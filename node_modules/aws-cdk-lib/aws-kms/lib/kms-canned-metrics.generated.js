@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.KMSMetrics=void 0;class KMSMetrics{static secondsUntilKeyMaterialExpirationAverage(dimensions){return{namespace:"AWS/KMS",metricName:"SecondsUntilKeyMaterialExpiration",dimensionsMap:dimensions,statistic:"Average"}}}exports.KMSMetrics=KMSMetrics;

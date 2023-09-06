@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.dropUndefined=void 0;function dropUndefined(x){if(x===null)return x;const ret={};for(const[key,value]of Object.entries(x))value!==void 0&&(ret[key]=value);return ret}exports.dropUndefined=dropUndefined;

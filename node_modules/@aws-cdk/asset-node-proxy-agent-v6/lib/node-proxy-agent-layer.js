@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LAYER_SOURCE = exports.LAYER_SOURCE_DIR = exports.ASSET_FILE = void 0;
+const path = require("path");
+exports.ASSET_FILE = path.join(__dirname, 'layer.zip');
+exports.LAYER_SOURCE_DIR = path.join(__dirname, '..', 'layer');
+exports.LAYER_SOURCE = path.join(__dirname, '..', 'layer', 'Dockerfile');
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibm9kZS1wcm94eS1hZ2VudC1sYXllci5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uL3NyYy9ub2RlLXByb3h5LWFnZW50LWxheWVyLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLDZCQUE2QjtBQUVoQixRQUFBLFVBQVUsR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLFNBQVMsRUFBRSxXQUFXLENBQUMsQ0FBQztBQUMvQyxRQUFBLGdCQUFnQixHQUFHLElBQUksQ0FBQyxJQUFJLENBQUMsU0FBUyxFQUFFLElBQUksRUFBRSxPQUFPLENBQUMsQ0FBQztBQUN2RCxRQUFBLFlBQVksR0FBRyxJQUFJLENBQUMsSUFBSSxDQUFDLFNBQVMsRUFBRSxJQUFJLEVBQUUsT0FBTyxFQUFFLFlBQVksQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgcGF0aCBmcm9tICdwYXRoJztcblxuZXhwb3J0IGNvbnN0IEFTU0VUX0ZJTEUgPSBwYXRoLmpvaW4oX19kaXJuYW1lLCAnbGF5ZXIuemlwJyk7XG5leHBvcnQgY29uc3QgTEFZRVJfU09VUkNFX0RJUiA9IHBhdGguam9pbihfX2Rpcm5hbWUsICcuLicsICdsYXllcicpO1xuZXhwb3J0IGNvbnN0IExBWUVSX1NPVVJDRSA9IHBhdGguam9pbihfX2Rpcm5hbWUsICcuLicsICdsYXllcicsICdEb2NrZXJmaWxlJyk7XG4iXX0=

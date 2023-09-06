@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.FollowMode=void 0;var FollowMode;(function(FollowMode2){FollowMode2.NEVER="never",FollowMode2.ALWAYS="always",FollowMode2.EXTERNAL="external",FollowMode2.BLOCK_EXTERNAL="internal-only"})(FollowMode||(exports.FollowMode=FollowMode={}));

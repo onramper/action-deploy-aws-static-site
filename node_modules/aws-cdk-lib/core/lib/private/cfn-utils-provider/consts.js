@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.CfnUtilsResourceType=void 0;var CfnUtilsResourceType;(function(CfnUtilsResourceType2){CfnUtilsResourceType2.CFN_JSON="Custom::AWSCDKCfnJson",CfnUtilsResourceType2.CFN_JSON_STRINGIFY="Custom::AWSCDKCfnJsonStringify"})(CfnUtilsResourceType||(exports.CfnUtilsResourceType=CfnUtilsResourceType={}));
