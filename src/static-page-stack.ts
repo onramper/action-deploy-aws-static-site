@@ -1,7 +1,7 @@
-import * as cdk from "@aws-cdk/core";
-import * as s3 from "@aws-cdk/aws-s3";
-import * as s3deploy from "@aws-cdk/aws-s3-deployment";
-import * as cloudfront from "@aws-cdk/aws-cloudfront";
+import * as cdk from "aws-cdk-lib/core";
+import * as s3 from "aws-cdk-lib/aws-s3";
+import * as s3deploy from "aws-cdk-lib/aws-s3-deployment";
+import * as cloudfront from "aws-cdk-lib/aws-cloudfront";
 import {
   getDNSZone,
   getCertificate,
@@ -19,7 +19,7 @@ const env = {
 
 export class StaticPageStack extends cdk.Stack {
   constructor(
-    scope: cdk.Construct,
+    scope: cdk.App,
     id: string,
     {
       stackName,

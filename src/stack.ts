@@ -1,4 +1,4 @@
-import * as cdk from "@aws-cdk/core";
+import * as cdk from "aws-cdk-lib/core";
 import { StaticPageStack } from "./static-page-stack";
 
 const app = new cdk.App();

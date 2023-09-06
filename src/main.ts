@@ -52,7 +52,7 @@ async function run(): Promise<void> {
       DOMAIN: domain,
       FOLDER: publish_dir,
     });
-  } catch (error) {
+  } catch (error: any) {
     core.setFailed(error.message);
   }
 }
