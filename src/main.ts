@@ -10,7 +10,7 @@ function execCDK(args: string, env: { [name: string]: string }): void {
   execSync(
     `(cd ${removeLastDir(__dirname)} && PATH="${removeLastDir(
       process.execPath,
-    )}:$PATH" node node_modules/aws-cdk/bin/cdk.js ${args})`,
+    )}:$PATH" node node_modules/aws-cdk-lib/index.js ${args})`,
     {
       env,
     },
