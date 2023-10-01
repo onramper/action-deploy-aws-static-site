@@ -33,7 +33,7 @@
     "aws-cdk-lib": "^2.94.0"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.4",
+    "@types/jest": "^29.5.5",
     "@types/node": "^20.5.9",
     "@typescript-eslint/parser": "^6.6.0",
     "@vercel/ncc": "^0.36.1",
@@ -41,7 +41,7 @@
     "eslint": "^8.48.0",
     "eslint-plugin-github": "^4.10.0",
     "eslint-plugin-jest": "^27.2.3",
-    "jest": "^29.6.4",
+    "jest": "^29.7.0",
     "jest-circus": "^29.6.4",
     "js-yaml": "^4.1.0",
     "prettier": "3.0.3",
